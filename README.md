@@ -1,1 +1,142 @@
-Initializing
+# Repolex Knowledge Graph of block/anchorsmd
+
+RDF knowledge graph data for [block/anchorsmd](https://github.com/block/anchorsmd), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download block/anchorsmd
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── f1e05a1f008c1cbe5279257107c4a3175b7b4bf9
+│   │       └── chunk-001.nq.gz
+│   ├── lsp
+│   │   └── f1e05a1f008c1cbe5279257107c4a3175b7b4bf9.nq.gz
+│   └── repolex
+│       └── f1e05a1f008c1cbe5279257107c4a3175b7b4bf9
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 02c463984cae2556b11d15ed2c381f22653e8bf5.nq.gz
+│   ├── 09130550dcef67351d0037870302405e8c8cf45b.nq.gz
+│   ├── 0ba9db25329d0b336e39ca8cde8470c5b7bc45eb.nq.gz
+│   ├── 0eb90047743205eebf5e46bc08c3c8224e94bb7d.nq.gz
+│   ├── 114249256cb4a6d848e2a6bdaae9b3d966efb5bc.nq.gz
+│   ├── 12a5882effdded0782b27c8a1f9f20e693e77388.nq.gz
+│   ├── 139de977c0eb7e8ebd1ea8f11ff2d2995ec7670c.nq.gz
+│   ├── 1e3a1c033c6f0b0eff7394b37d5abbb41be68878.nq.gz
+│   ├── 21ecf13a6fc9700d6494b5a930d156bd547e15c7.nq.gz
+│   ├── 24175df63309c207abc0e9003146739b07bb3fe9.nq.gz
+│   ├── 25f0bc5ed80683a81f46e6bfd1cf8ea0b56c6807.nq.gz
+│   ├── 26c7602b483fc6577557f14b713b1d625519bf3c.nq.gz
+│   ├── 277687b94248072b3d4672bea4b0cc87a4e7af8a.nq.gz
+│   ├── 29cc5a01ae65bead97b736379115079b0615253e.nq.gz
+│   ├── 2afd4ebdb5ce6c53a19d1aa2a8337606f13d016a.nq.gz
+│   ├── 2e4c8f4a8e74bd60e2acada3757d18e66a186bd2.nq.gz
+│   ├── 338504d1402b8746e72100ac453c7b1198c383b7.nq.gz
+│   ├── 343b2bbdd82148a74164aee3f2acc595e65251f9.nq.gz
+│   ├── 44020e275682f1bef9722a4d43af2173fe2fab8d.nq.gz
+│   ├── 47dc3e3d863cfb5727b87d785d09abf9743c0a72.nq.gz
+│   ├── 498634be95a8c9b7d271651f44c24926380764c0.nq.gz
+│   ├── 50a684f1baf4d5a6c61765fcbc426449fab2f5fe.nq.gz
+│   ├── 51647e0d53e62349409346d9d68eddc7f4b10b22.nq.gz
+│   ├── 5780f1aa71840bd059d71ec9b3e906f7336dd9b9.nq.gz
+│   ├── 5feb5b74cfccf42c9db861c736812025d9ffa66d.nq.gz
+│   ├── 6437c5ddec808d8d4cbaf58895e7dabce07b7ea9.nq.gz
+│   ├── 6792428b51160bd70664294eb1654bdae75ff424.nq.gz
+│   ├── 68ee5fac8b2bf8d378529ba3a72cd86eea5347c3.nq.gz
+│   ├── 6bccf43368fd7c96d9c659562a5142b8b8cb98a1.nq.gz
+│   ├── 6efc205e3366dd537e3885897cf2bcdf02719a17.nq.gz
+│   ├── 713f4d1bb60e11f45a8137b8cb0db493888b228f.nq.gz
+│   ├── 778af2409e2d3ec3a51fb8f2484dfcd44f0c16e0.nq.gz
+│   ├── 788b2bf87258ce0150e10af8c5d503517e6e7975.nq.gz
+│   ├── 7f87fe4c8e4b41275f0ce880a50379f62db6f43e.nq.gz
+│   ├── 81439d95f78efe364c82e5dfa3e2018c4eff4435.nq.gz
+│   ├── 81f2662b8fcbf4d9bcd782bda91575660c5b2f1c.nq.gz
+│   ├── 862ee3c28647e7a58801a75236855c269c1448ae.nq.gz
+│   ├── 9582fc588754f78d9875691a3bd5e674295436b3.nq.gz
+│   ├── 9a83d9f182ee7fd2af85387f30d5da81d23a6487.nq.gz
+│   ├── 9d001188cac6123044ee3d77885474275892ce0b.nq.gz
+│   ├── 9d9babc7520287f3f12c593c525466af5005f73c.nq.gz
+│   ├── a0792bda6aba784504bfd6d28418f2e41d4b0e7e.nq.gz
+│   ├── a148220eb64ad1cf0a80298c148f1a92835224a4.nq.gz
+│   ├── b594724c85232d6b5de988595dec4e12a61c9230.nq.gz
+│   ├── b793d071fe0135f48668703e9db3b4e340ff6a31.nq.gz
+│   ├── b87bd9feb07f692a64bb74ec5b16e560ef26427f.nq.gz
+│   ├── bae01fd88e0965ca75d85eae2eee6fb2726e82df.nq.gz
+│   ├── bcf209979a3661ee0b70c7951ea64d3d292b808a.nq.gz
+│   ├── bd1ce6cfd2ae47473bcc1dc069de9e37881780ca.nq.gz
+│   ├── cb4eaeea8a717fe77697a3329fab873926b45962.nq.gz
+│   ├── cb676de104e6dce733c81fcc1c6737304b072ade.nq.gz
+│   ├── d077d24e1b6b96ab80018336cc6ab8562c336971.nq.gz
+│   ├── d4ac9ee9869d9f7204cc9099cfe53e9edf6bbfb4.nq.gz
+│   ├── d5deeb44da8299e40b798b3735d63e948ae50cdd.nq.gz
+│   ├── dc620a539ab5af0b458dd038d736a382855e6f59.nq.gz
+│   ├── edb1e7a790f2ad316216f49918c4464bc0692da2.nq.gz
+│   ├── f61c35677f177306db90efffcd17ba0b23f21ee4.nq.gz
+│   ├── f6fb1b67ce3edb4856c67bdd7f3f38dd0d6a3cf4.nq.gz
+│   ├── fdb8b4ba876dbb4ec493c9c6338d131833d54dc4.nq.gz
+│   ├── ff583d3bb0252b7d3b740a16f5a238b402adcd5f.nq.gz
+│   └── ff5dfe49a3e289e2ff73a31f5a9b8cba29470d70.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── f1e05a1f008c1cbe5279257107c4a3175b7b4bf9.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+14 directories, 70 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[block/anchorsmd](https://github.com/block/anchorsmd)
+
+---
+*Parsed on 2026-10-02 by [repolex](https://repolex.ai)*
