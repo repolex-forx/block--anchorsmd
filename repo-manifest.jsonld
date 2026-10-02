@@ -8,7 +8,7 @@
     {
       "@id": "https://repolex.ai/r/block/anchorsmd/commit/f1e05a1f008c1cbe5279257107c4a3175b7b4bf9",
       "git:hexsha": "f1e05a1f008c1cbe5279257107c4a3175b7b4bf9",
-      "repolex:parseStatus": "metadata_complete",
+      "repolex:parseStatus": "ast_complete",
       "git:tagName": "0.2.0"
     },
     {
