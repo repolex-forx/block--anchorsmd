@@ -8,8 +8,9 @@
     {
       "@id": "https://repolex.ai/r/block/anchorsmd/commit/f1e05a1f008c1cbe5279257107c4a3175b7b4bf9",
       "git:hexsha": "f1e05a1f008c1cbe5279257107c4a3175b7b4bf9",
-      "repolex:parseStatus": "enrich_complete",
-      "git:tagName": "0.2.0"
+      "repolex:parseStatus": "parsed",
+      "git:tagName": "0.2.0",
+      "repolex:parsedAt": "2026-10-02T11:21:02.443530+00:00"
     },
     {
       "@id": "https://repolex.ai/r/block/anchorsmd/commit/2f1452814b420409058a018ba51496d2f8cf10a1",
